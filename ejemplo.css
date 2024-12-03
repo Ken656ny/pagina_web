@@ -1,0 +1,85 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #000, #1d1d1d, #b7b6b6, #ffffff);
+    background-size: 400% 400%;
+    animation: mover 7s ease-in infinite;
+    z-index: -1; 
+}
+@keyframes mover {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+.fade-in {
+    animation: fadeIn 2s ease-in-out; 
+}
+.info {
+    height: 300px;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.2);  
+    border-radius: 10px;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards; 
+}
+.formulario {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+.name {
+    color: white;
+    margin-top: 30px;
+}
+.input {
+    color: black;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid white;
+    padding: 8px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    width: 80%;
+    transition: transform 0.3s ease, color 0.3s ease;  
+}
+.input:hover {
+    transform: scale(1.05);  
+    color: darkorchid;  
+}
+body:hover {
+    background: linear-gradient(45deg, #b7b6b6, #1d1d1d, #000, #ffffff);
+}

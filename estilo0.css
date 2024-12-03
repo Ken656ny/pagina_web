@@ -1,0 +1,166 @@
+.uno {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #000, #222222, #3b3b3b, #030202);
+    background-size: 400% 400%; 
+    animation: mover-gradiante 10s infinite; 
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+@keyframes fadein {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.fadein {
+    animation: fadein 3s ease-in-out;
+}
+
+@keyframes mover-gradiante {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+h1, h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    color: white;
+}
+.descripcion {
+    font-family: 'Arial', sans-serif;
+    color: white;
+    max-width: 80%;
+    margin: 10px auto;
+    font-size: 18px;
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Asegura que las imágenes estén centradas */
+    gap: 20px;
+    max-width: 1000px;
+    margin-top: 20px;
+    width: 100%;
+}
+.image-container {
+    position: relative;
+    left: 150px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 300px; 
+    height: 250px;
+    text-align: center;
+}
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  
+    transition: transform 0.3s ease;
+}
+.image-container:hover img {
+    transform: scale(1.1);
+}
+.description {
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.image-container:hover .description {
+    opacity: 1;
+}
+.vision-mision {
+    position: relative;
+    left: 100px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 30px;
+    width: 100%;
+    max-width: 1100px;
+    box-sizing: border-box;
+    justify-content: center;
+}
+.vision, .mision, .objetivo, .duracion, .modulo {
+    margin: 20px;
+    height: 250px;
+    width: 45%;
+    border: 1px solid rgb(210, 210, 210);
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+.vision:hover, .mision:hover, .objetivo:hover, .duracion:hover, .modulo:hover {
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.visionP, .misionP, .descripcionP, .duracionP, .moduloP {
+    font-size: 16px;
+}
+.final {
+    margin-top: 30px;
+    color: white;
+}
+.link {
+    text-decoration: none;
+    color: #0000ff; 
+    font-weight: bold;
+}
+.link:hover {
+    text-decoration: underline;
+}
+@media screen and (max-width: 768px) {
+    .vision-mision {
+        flex-direction: column;
+        align-items: center;
+    }
+    .vision, .mision, .objetivo, .duracion, .modulo {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+    .image-container {
+        height: 200px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+    .vision, .mision, .objetivo, .duracion, .modulo {
+        width: 100%;
+    }
+    .image-container {
+        height: 180px;
+    }
+}

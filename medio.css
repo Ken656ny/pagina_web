@@ -1,0 +1,125 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #000, #1d1d1d, #b7b6b6, #767676);
+    background-size: 400% 400%;
+    animation: mover 12s ease-in infinite;
+    text-align: center;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fadein {
+    animation: fadein 1s ease-in-out;
+}
+
+@keyframes mover {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.texto h1 {
+    color: white;
+    margin: 20px 0;
+    font-size: 2rem;
+}
+
+.texto p {
+    color: white;
+    margin: 0 0 40px;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    padding: 0 20px; 
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.image-container a {
+    display: block;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.image-container:hover img {
+    transform: scale(1.1);
+}
+
+.description {
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .texto h1 {
+        font-size: 1.5rem;
+    }
+
+    .texto p {
+        font-size: 1rem;
+    }
+
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-container {
+        width: 80%; 
+    }
+}
